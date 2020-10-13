@@ -1,8 +1,9 @@
 
-
+import { getLocaleFirstDayOfWeek } from '@angular/common';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 import { PokemonService } from 'src/app/service/pokemon.service';
 
 @Component({
@@ -22,7 +23,7 @@ export class TableComponent implements OnInit {
 
 
 
-  constructor(private pokeService: PokemonService) { }
+  constructor(private pokeService: PokemonService, private router: Router) { }
 
   ngOnInit(): void {
     this.getPokemos();
@@ -60,5 +61,7 @@ export class TableComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
+    getRow(row){
+       this.router.navigateByUrl(`pokeDetail/${row.position}`);
+    }  
 }
-
