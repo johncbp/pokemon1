@@ -1,4 +1,3 @@
-
 import { getLocaleFirstDayOfWeek } from '@angular/common';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
