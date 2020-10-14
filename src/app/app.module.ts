@@ -10,6 +10,7 @@ import { TableComponent } from './components/table/table.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from 'src/shared/material.module';
 import { HttpClientModule } from '@angular/common/http';
+import { HabilidadComponent } from './components/habilidad/habilidad.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     HeaderComponent,
     DetailComponent,
-    TableComponent
+    TableComponent,
+    HabilidadComponent
   ],
   imports: [
     BrowserModule,
