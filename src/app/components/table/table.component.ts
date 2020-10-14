@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { getLocaleFirstDayOfWeek } from '@angular/common';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
@@ -64,3 +65,5 @@ export class TableComponent implements OnInit {
        this.router.navigateByUrl(`pokeDetail/${row.position}`);
     }  
 }
+=======
+>>>>>>> a445bba7ee225361292143e746bce0cdf5c3b659
