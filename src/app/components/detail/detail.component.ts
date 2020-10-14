@@ -10,8 +10,10 @@ import { PokemonService } from 'src/app/service/pokemon.service';
 export class DetailComponent implements OnInit {
 
     pokemon: any = '';
-    pokemonType = [];
     pokemonImg = '';
+    pokemonTypes = [];
+    pokemonAbilities = [];
+    pokemonMoves = [];
 
   constructor(private pokemonService: PokemonService, private activatedRouter: ActivatedRoute) { 
       this.activatedRouter.params.subscribe(
@@ -29,7 +31,9 @@ export class DetailComponent implements OnInit {
           res => {
             this.pokemon = res;
             this.pokemonImg = this.pokemon.sprites.front_default;
-            this.pokemonType = res.types[0].type.name;
+            this.pokemonTypes = res.types;
+            this.pokemonAbilities = res.abilities;
+            this.pokemonMoves = res.moves;
           },
           err =>{
             console.log(err);

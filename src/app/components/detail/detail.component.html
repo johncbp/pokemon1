@@ -1,7 +1,5 @@
 <mat-card class="card">
 
-
-  
     <mat-card-header>
       <img mat-card-avatar class="header-image" src={{pokemonImg}}>
       <mat-card-title>{{pokemon.name}}</mat-card-title>
@@ -11,11 +9,56 @@
     <img mat-card-image src="{{pokemonImg}}" alt="Pokemon">
    
     <mat-card-content>
-        <mat-chip-list aria-label="Fish selection">
-            <mat-chip color="primary" selected>Tipo: {{pokemonType}}</mat-chip>
+
+      <mat-accordion>
+               
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Datos basicos
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-chip-list>
             <mat-chip color="primary" selected>Altura: {{pokemon.height}}</mat-chip>
             <mat-chip color="primary" selected>Peso: {{pokemon.weight}}</mat-chip>
-        </mat-chip-list>
+          </mat-chip-list>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Tipos
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-chip-list>
+            <mat-chip *ngFor="let type of pokemonTypes">{{ type.type.name }}</mat-chip>
+          </mat-chip-list>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Habilidades
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-chip-list>
+            <mat-chip *ngFor="let ability of pokemonAbilities">{{ ability.ability.name }}</mat-chip>
+          </mat-chip-list>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Movimientos
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-chip-list>
+            <mat-chip *ngFor="let move of pokemonMoves">{{ move.move.name }}</mat-chip>
+          </mat-chip-list>
+        </mat-expansion-panel>
+        
+      </mat-accordion>
+
     </mat-card-content>
    
   </mat-card>
